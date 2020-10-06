@@ -8,9 +8,9 @@ describe('PrivateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PrivateComponent ]
+      declarations: [PrivateComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

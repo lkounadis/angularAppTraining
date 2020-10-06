@@ -7,18 +7,18 @@ import { SearchforMovieService } from 'src/app/services/SearchForMovie/searchfor
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.css']
+  styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent implements OnInit {
   movieList$: Observable<SearchMovieResults[]>;
-  cachedMovies:SearchMovieResults[];
+
+  cachedMovies: SearchMovieResults[];
 
   constructor(public movieService: SearchforMovieService, private movieCache: MovieCacheService) {
-    this.movieList$ = this.movieService.movieList$
-    this.cachedMovies = this.movieCache.getListOfMovies()
-   }
+    this.movieList$ = this.movieService.movieList$;
+    this.cachedMovies = this.movieCache.getListOfMovies();
+  }
 
   ngOnInit(): void {
   }
-
 }

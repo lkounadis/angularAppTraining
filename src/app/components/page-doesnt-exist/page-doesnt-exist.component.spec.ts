@@ -8,9 +8,9 @@ describe('PageDoesntExistComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageDoesntExistComponent ]
+      declarations: [PageDoesntExistComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

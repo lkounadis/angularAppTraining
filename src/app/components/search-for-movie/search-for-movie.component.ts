@@ -4,19 +4,18 @@ import { SearchforMovieService } from 'src/app/services/SearchForMovie/searchfor
 @Component({
   selector: 'app-search-for-movie',
   templateUrl: './search-for-movie.component.html',
-  styleUrls: ['./search-for-movie.component.css']
+  styleUrls: ['./search-for-movie.component.css'],
 })
 export class SearchForMovieComponent implements OnInit {
-  movie='';
-  constructor(private searchForMovieService:SearchforMovieService) { }
+  movie = '';
+
+  constructor(private searchForMovieService: SearchforMovieService) { }
 
   ngOnInit(): void {
   }
 
-  searchForMovie(){
-    this.searchForMovieService.getMovies(this.movie)
-    this.movie = ''
+  searchForMovie(): void {
+    this.searchForMovieService.getMovies(this.movie);
+    this.movie = '';
   }
-
-
 }

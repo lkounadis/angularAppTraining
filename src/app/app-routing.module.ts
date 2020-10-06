@@ -11,36 +11,39 @@ import { IDResolverService } from './services/IDResolver/idresolver.service';
 import { PrivateComponent } from './components/private/private.component';
 import { AuthGuard } from './guards/auth.guard';
 
-
 const routes: Routes = [{
-  path:'home', component: HomeComponent,
-}, 
-{
-  path:'home/:id', component:HomeComponent,
-  resolve: {
-  resolvedId: IDResolverService
+  path: 'home', component: HomeComponent,
 },
+{
+  path: 'home/:id',
+  component: HomeComponent,
+  resolve: {
+    resolvedId: IDResolverService,
+  },
 },
 
 {
-  path:'routeInRoute', component: RouteInRouteComponent,
-  children:[
-    {path:'child-a', component:ChildAComponent},
-    {path:'child-b', component:ChildBComponent},
-  ]
-}, 
-{path:'private', component:PrivateComponent,
-canActivate:[AuthGuard]
+  path: 'routeInRoute',
+  component: RouteInRouteComponent,
+  children: [
+    { path: 'child-a', component: ChildAComponent },
+    { path: 'child-b', component: ChildBComponent },
+  ],
 },
-{path:'searchForMovie', component:SearchForMovieComponent},
-{path:'createItemList', component:CreateListItemComponent},
-{ path: '',   redirectTo: '/home', pathMatch:'full' },
 {
-  path:'**', component: PageDoesntExistComponent,
+  path: 'private',
+  component: PrivateComponent,
+  canActivate: [AuthGuard],
+},
+{ path: 'searchForMovie', component: SearchForMovieComponent },
+{ path: 'createItemList', component: CreateListItemComponent },
+{ path: '', redirectTo: '/home', pathMatch: 'full' },
+{
+  path: '**', component: PageDoesntExistComponent,
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing:false})],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
