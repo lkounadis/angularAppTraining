@@ -1,0 +1,6 @@
+<input type="text" [appSubmitWithEnter]="addNewItem"  [(ngModel)]="item" placeholder="Add new Item"/>
+<button mat-raised-button color="primary" (click)=addNewItem()>Add Item</button>
+
+<ul>
+    <li *ngFor="let itemList of list">{{itemList}}</li>
+</ul>

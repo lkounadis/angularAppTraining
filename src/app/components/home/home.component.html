@@ -1,0 +1,8 @@
+<p>Welcome to Home</p>
+<div *ngIf="id">
+    <div>I have an id {{id}}</div>
+    <div>I have an id from an Observable without subscriber {{idFromObservable$ | async}}</div>
+    <div>I have an id from an Observable {{idFromObservable}}</div>
+    <div>I have an id from a Resolver {{idFromResolver}}</div>
+</div>
+

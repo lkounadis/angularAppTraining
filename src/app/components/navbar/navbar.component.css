@@ -1,0 +1,13 @@
+header {
+    background: darkblue;
+    padding: 10px;
+}
+
+a {
+    color: whitesmoke;
+    padding: 10px;
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: underline;
+}

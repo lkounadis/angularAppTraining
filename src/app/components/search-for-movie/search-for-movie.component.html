@@ -1,0 +1,5 @@
+<h1>Search for any movie</h1>
+<input type="text" placeholder="Search for a movie" [appSubmitWithEnter]="searchForMovie.bind(this)" [(ngModel)]="movie"/>
+<button (click)="searchForMovie()">Search</button>
+
+<app-movie-list></app-movie-list>

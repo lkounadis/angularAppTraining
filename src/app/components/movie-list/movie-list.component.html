@@ -1,0 +1,12 @@
+<h2>Movies from Api</h2>
+<ul>
+    <li *ngFor="let movie of movieList$ | async">
+      <app-card [movie]="movie"></app-card>
+    </li>
+</ul>
+<h2>Cached Movies</h2>
+    <ul>
+    <li *ngFor="let movie of cachedMovies">
+      <app-card [movie]="movie"></app-card>      
+  </li>
+</ul>
